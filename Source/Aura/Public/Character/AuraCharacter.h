@@ -15,13 +15,21 @@ class AURA_API AAuraCharacter : public AAuraCharacterBase
 	GENERATED_BODY()
 	
 public:
+	
 	AAuraCharacter();
 	
-	protected:
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void OnRep_PlayerState() override;
+	
+protected:
+	
 	UPROPERTY(EditDefaultsOnly, Category="Camera")
 	USpringArmComponent* SpringArmComponent = nullptr;
 	
 	UPROPERTY(EditDefaultsOnly, Category="Camera")
 	UCameraComponent* CameraComponent = nullptr;
+	
+private:
+	void InitAbilityActorInfo();
 	
 };
