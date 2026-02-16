@@ -43,6 +43,7 @@ public:
 	void SetWidgetControllerParams(const FWidgetControllerParams& WCParams);
 	
 	virtual void BroadcastInitValues();
+	virtual void BindCallbacksToDependencies();
 	
 protected:
 	
